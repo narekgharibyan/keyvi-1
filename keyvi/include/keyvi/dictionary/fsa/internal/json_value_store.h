@@ -71,7 +71,7 @@ namespace internal {
  * Value store where the value is a json object.
  */
 /// TODO: move merge logic into dedicated JsonValueStoreMerger class
-class JsonValueStore final : public IValueStoreWriter {
+class JsonValueStore : public IValueStoreWriter {
  public:
   typedef std::string value_t;
   static const uint64_t no_value = 0;
@@ -296,9 +296,8 @@ class JsonValueStore final : public IValueStoreWriter {
   }
 };
 
-class JsonValueStoreReader final : public IValueStoreReader {
+class JsonValueStoreReader : public IValueStoreReader {
  public:
-  using IValueStoreReader::IValueStoreReader;
 
   JsonValueStoreReader(std::istream& stream, boost::interprocess::file_mapping* file_mapping,
                        loading_strategy_types loading_strategy = loading_strategy_types::lazy)

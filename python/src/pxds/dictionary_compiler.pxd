@@ -64,3 +64,12 @@ cdef extern from "dictionary/dictionary_types.h" namespace "keyvi::dictionary":
         void SetManifestFromString(libcpp_utf8_string) # wrap-ignore
         void WriteToFile(libcpp_utf8_string) except +
 
+    cdef cppclass JsonCompletionDictionaryCompiler:
+        JsonCompletionDictionaryCompiler() except +
+        JsonCompletionDictionaryCompiler(libcpp_map[libcpp_utf8_string, libcpp_utf8_string] value_store_params) except +
+        void Add(libcpp_utf8_string, libcpp_utf8_string) except +
+        void __setitem__(libcpp_utf8_string, libcpp_utf8_string) except +
+        void Compile() nogil # wrap-ignore
+        void Compile(callback_t, void*) nogil # wrap-ignore
+        void SetManifestFromString(libcpp_utf8_string) # wrap-ignore
+        void WriteToFile(libcpp_utf8_string)

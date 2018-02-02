@@ -31,6 +31,8 @@
 #include "dictionary/fsa/internal/memory_map_flags.h"
 #include "dictionary/fsa/internal/null_value_store.h"
 #include "dictionary/fsa/internal/string_value_store.h"
+#include "dictionary/fsa/internal/json_value_store.h"
+#include "dictionary/fsa/internal/json_inner_weights_value_store.h"
 
 namespace keyvi {
 namespace dictionary {
@@ -55,6 +57,8 @@ class ValueStoreFactory final {
         return new JsonValueStoreReader(stream, file_mapping, loading_strategy);
       case INT_INNER_WEIGHTS_VALUE_STORE:
         return new IntInnerWeightsValueStoreReader(stream, file_mapping);
+      case JSON_INNER_WEIGHTS_VALUE_STORE:
+        return new JsonInnerWeightsValueStoreReader(stream, file_mapping);
       default:
         throw std::invalid_argument("Unknown Value Storage type");
     }
