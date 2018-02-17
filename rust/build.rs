@@ -33,7 +33,7 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    let dst = cmake::build("../");
+    let dst = cmake::build("keyvi_core/");
 
     // Tell cargo to tell rustc to link keyvi
     println!("cargo:rustc-link-lib=dylib=keyvi_c");
@@ -43,7 +43,7 @@ fn main() {
 
     let bindings = bindgen::Builder::default()
         // The input header we would like to generate bindings for.
-        .header("../keyvi/include/keyvi/c_api/c_api.h")
+        .header("keyvi_core/keyvi/include/keyvi/c_api/c_api.h")
         .clang_arg("-x").clang_arg("c++")
         .enable_cxx_namespaces()
         .layout_tests(true)
