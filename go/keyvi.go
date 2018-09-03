@@ -2,7 +2,7 @@
 package keyvi
 
 // #cgo CFLAGS: -I../keyvi/include/keyvi/c_api/
-// #cgo LDFLAGS: -lkeyvi_c -L .
+// #cgo LDFLAGS: -lkeyvi_c -L ../build
 // #include <stdlib.h>
 // #include "c_api.h"
 import "C"
