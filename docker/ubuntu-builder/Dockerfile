@@ -30,3 +30,9 @@ RUN pyenv install pypy3.5-6.0.0
 # install rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
 ENV PATH "~/.cargo/bin:$PATH"
+
+# install golang
+RUN set -ex \
+    && apt-get update \
+    && apt-get install -y golang \
+    && rm -rf /var/lib/apt/lists/*

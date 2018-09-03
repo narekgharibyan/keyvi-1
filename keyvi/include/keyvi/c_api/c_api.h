@@ -69,7 +69,7 @@ struct keyvi_match_iterator* keyvi_dictionary_get_multi_word_completions(const s
 
 void keyvi_match_destroy(const struct keyvi_match*);
 
-bool keyvi_match_is_empty(const struct keyvi_match*);
+//bool keyvi_match_is_empty(const struct keyvi_match*);
 
 double keyvi_match_get_score(const struct keyvi_match*);
 
@@ -83,7 +83,7 @@ char* keyvi_match_get_matched_string(const struct keyvi_match*);
 
 void keyvi_match_iterator_destroy(const struct keyvi_match_iterator*);
 
-bool keyvi_match_iterator_empty(const struct keyvi_match_iterator*);
+//bool keyvi_match_iterator_empty(const struct keyvi_match_iterator*);
 
 struct keyvi_match* keyvi_match_iterator_dereference(const struct keyvi_match_iterator*);
 
